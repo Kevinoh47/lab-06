@@ -1,0 +1,6 @@
+<h2>Our Products in the Selected Category</h2>
+<ul>
+    <% products.forEach( product => { %>
+        <li><strong><%= product.display_name %></strong> : <em><%= product.description %></em></li>
+    <% }) %>
+</ul>

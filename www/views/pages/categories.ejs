@@ -1,0 +1,7 @@
+<h2>Our Product Categories</h2>
+<p>At Happy Days General Store, you can can buy products in these areas:</p>
+<ul>
+    <% categories.forEach( category => { %>
+        <li><%= category.display_name%></li>
+    <% }) %>
+</ul>
