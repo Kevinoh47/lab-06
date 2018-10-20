@@ -52,6 +52,7 @@ function productsPage (req, res) {
 function categoriesPage (req, res) {
   superagent.get(`${API}/categories`)
     .then(data => {
+      console.log('category data', data.body);
       res.render(
         'site', 
         {
@@ -62,18 +63,12 @@ function categoriesPage (req, res) {
       );
     });
 }
-/*request
-    .get('/querystring')
-    .query('search=Manny')
-    .query('range=1..5')
-    .then(res => {
 
-    }); */
 function categoryProductsPage (req, res) {
-  //console.log('id: ', req.params.id);
   superagent.get(`${API}/products`)
     .query(`category=${req.params.id}`)
     .then(data => {
+      // console.log('category products data', data.body); TODO remove
       res.render(
         'site',
         {
@@ -84,6 +79,8 @@ function categoryProductsPage (req, res) {
       );
     });
 }
+
+
 
 // listener
 app.listen(PORT, () => {`Web server listening on PORT ${PORT}`;});

@@ -4,7 +4,7 @@
   "description": "![CF](http://i.imgur.com/7v5ASc8.png) LAB: HTTP and REST ========================================================",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "tests" : "node __tests__/tests.js"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,9 @@
     "dotenv": "^6.1.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "superagent": "^4.0.0-beta.5",
+    "superagent": "^4.0.0-beta.5"
+  },
+  "devDependencies": {
     "supertest": "^3.3.0"
   }
 }
