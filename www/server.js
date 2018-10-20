@@ -26,6 +26,7 @@ app.get('/category/:id', categoryProductsPage);
 
 // helper callbacks
 function homePage (req, res) {
+  //res.status(201); //TODO testing...
   res.render(
     'site', 
     {
@@ -52,7 +53,6 @@ function productsPage (req, res) {
 function categoriesPage (req, res) {
   superagent.get(`${API}/categories`)
     .then(data => {
-      console.log('category data', data.body);
       res.render(
         'site', 
         {
@@ -68,7 +68,6 @@ function categoryProductsPage (req, res) {
   superagent.get(`${API}/products`)
     .query(`category=${req.params.id}`)
     .then(data => {
-      // console.log('category products data', data.body); TODO remove
       res.render(
         'site',
         {
@@ -80,7 +79,9 @@ function categoryProductsPage (req, res) {
     });
 }
 
-
-
 // listener
 app.listen(PORT, () => {`Web server listening on PORT ${PORT}`;});
+
+module.exports = {
+  server: app,
+};

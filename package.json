@@ -4,7 +4,9 @@
   "description": "![CF](http://i.imgur.com/7v5ASc8.png) LAB: HTTP and REST ========================================================",
   "main": "server.js",
   "scripts": {
-    "tests" : "node __tests__/tests.js"
+    "lint": "eslint **/*.js",
+    "test": "jest --verbose --coverage",
+    "test-watch": "jest --watchAll --verbose --coverage"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
     "dotenv": "^6.1.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "jest": "^23.6.0",
     "superagent": "^4.0.0-beta.5"
   },
   "devDependencies": {
